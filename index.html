@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rīgas Stila un modes tehnikums</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopu927OhDNTuSDWUMXeYFvfIU7imp-F5phA&s" type="image/png">
+    <link rel="apple-touch-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopu927OhDNTuSDWUMXeYFvfIU7imp-F5phA&s">
+    <link rel="icon" sizes="192x192" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopu927OhDNTuSDWUMXeYFvfIU7imp-F5phA&s">
+    <link rel="icon" sizes="512x512" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopu927OhDNTuSDWUMXeYFvfIU7imp-F5phA&s">
+
+    <style>
+        body {
+            background-color: red;
+            margin: 0; 
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            height: 1000px;
+            font-size: 1.5vw;
+        }
+        
+        #Main {
+            background-color: white;
+            padding: 10px; 
+            position: sticky; 
+            top: 0; 
+            width: 98.4%; 
+            z-index: 1000;
+        }
+        #upper {
+            display: flex;
+            align-items: center; 
+            padding: 10px;
+            justify-content: space-between; 
+        }
+        #logo-container {
+            display: flex;
+            align-items: center;
+        }
+        #rigalogo {
+            height: 50px;
+            margin-right: 10px; 
+            border-radius: 50%;
+        }
+        #header3 {
+            margin: 0; 
+            font-size: 1.5rem;
+        }
+        #homebtn, #loginbtn {
+            border-style: solid;
+            height: 6.8vh;
+            width: 6.4vw;
+            border-width: 1px;
+            background-color: transparent;
+            transition: 0.2s;
+            font-size: 1vw;
+        }
+        #substitution, #timetable {
+            border-style: solid;
+            height: 6.8vh;
+            width: 6.4vw;
+            font-size: 1vw;
+            border-width: 1px;
+            background-color: white;
+            transition: 0.2s;
+        }
+        #homebtn:hover,#loginbtn:hover, #substitution:hover, #timetable:hover {
+            cursor: pointer;
+            border-color: red;
+            color: white;
+            background-color: red;
+        }
+        #lower {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            height: 50%; 
+            width: 95vw;
+            max-width: 100%; 
+            margin: 0 auto;
+            background-color: transparent;
+            border-style: solid;
+            border-width: 1.5px;
+            border-color: white;
+            margin-top: 50px;
+            padding-bottom: 50px;
+            border-radius: 10px;
+        }
+        #paragraph1{
+            margin-left: 50px;
+        }
+        #paragraph2{
+            margin-top: 100px;
+        }
+        #enddiv{
+            background-color: white;
+            width: 100%;
+            height: 40vh;
+            margin-top: 50px;
+            padding-left: 0px;
+            padding-top: 20px;
+        } 
+        #item {
+            margin-left: 50px;
+        }
+        #cncdiv, #phtdiv, #updtdiv {
+            display: inline-block;
+        }
+        #hrefid{
+            width: 0px;
+            color: transparent;
+        }
+        #fb{
+            color: blue;
+        }
+        #ig{
+            color: orange;
+        }
+        #logindiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            background-color: rgba(0,0 , 0, 0.75);
+            border-radius: 1vh;            
+            width: 50%;
+            height: 60vh;
+            margin-top: 7vh;
+            color: white;
+        }
+        #verifydiv{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            background-color: rgba(0,0 , 0, 0.75);
+            border-radius: 1vh;            
+            width: 50%;
+            height: 60vh;
+            margin-top: 7vh;
+            color: white;
+        }
+        #user, #pass, #lbtn{
+            display: block;
+            margin: 1vh;
+
+        }
+        #user, #pass, #email{
+            border-style: solid;
+            border-top: 0;
+            border-right: 0;
+            border-left: 0;
+            border-width: 0.15vw;
+            border-color: gray;
+            height: 5vh;
+            width: 36.60%;
+            outline: none;
+            transition: 0.2s;
+        }
+        #user:hover, #pass:hover{
+            border-color: orange;
+        }
+        #user{
+            margin-top: 2vh;
+        }
+        #lbtn{
+            border-style: solid;
+            border-color: gray;
+            border-width: 0.15vw;
+            height: 6vh;
+            width: 17.67vw;
+            transition: 0.1s;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+
+        }
+        #lbtn:hover{
+            cursor: pointer;
+            border-color: black;
+            color: white;
+            background-color: black;
+        }
+        #verifydiv{
+            display: none;
+        }
+        #verify{
+            margin-top: 4vh;
+            background-color: transparent;
+            border-style: none;
+            color: white;
+            font-size: 1.1vw;
+        }
+        #verify:hover{
+            color: orange;
+            cursor: pointer;
+        }
+
+
+        #verify-container {
+            text-align: center;
+            border: 1px solid #ddd;
+            background-color: white;
+            border-style: solid;
+            border-width: 0.15vw;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            height: 5vh;
+            width: 37%;
+            margin-top: 1vh;
+        }
+
+        #verify-btn {
+    background-color: white;
+    border-style: solid;
+    border-color: gray;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-width: 0.15vw;
+    width: 37%;
+    margin-top: 1vh;
+    height: 5vh;
+    color: black;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+#verify-btn:disabled {
+    background-color: gray;
+    border-style: solid;
+    border-color: gray;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-width: 0.15vw;
+    color: black;
+    cursor: not-allowed;
+}
+
+#verify-btn:hover:not(:disabled) {
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+        #robot-check {
+            color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: green;
+        }
+        #not-robot{
+            border-radius: 0px;
+            border-style: solid;
+            margin-top: 0px;
+        }
+        #p1{
+            font-size: 2vh;
+            margin-top: 1.5vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="Main">
+        <div id="upper">
+            <div id="logo-container">
+                <img id="rigalogo" src="https://raw.githubusercontent.com/RigaStilaUnTehnikums/info/main/rigas.jpg" alt="Logo">
+                <h3 id="header3" data-eng="Rīgas Stila un modes tehnikums" data-lv="Rīgas Stila un modes tehnikums">Rīgas Stila un modes tehnikums</h3>
+            </div>
+            <div>
+                <a id="hrefid" href="https://rigastilauntehnikums.github.io/info/">
+                    <button id="homebtn" data-eng="Home" data-lv="Sākums">Home</button>
+                </a>
+                <button id="loginbtn" data-eng="Login" data-lv="Pieteikties">Login</button> 
+                <button id="timetable" data-eng="Timetable" data-lv="Stundas">Timetable</button>
+                <button id="substitution" data-eng="Substitution" data-lv="Aizvietošana">Substitution</button>
+            </div>
+        </div>
+    </div>
+    <div id="lower">
+        <div id="logindiv">
+            <h3>Login</h3>
+            <input id="user" type="text" placeholder="Username">
+            <input id="pass" type="password" placeholder="Password">
+            <a href="https://www.google.com/" style="color:transparent;">
+                <button id="lbtn">Login</button>
+            </a>
+                <button id="verify">
+                    Forgot password or username?
+                </button>
+        </div>
+        <div id="verifydiv">
+            <h3>Enter your email</h3>
+            <input id="email" type="email" placeholder="Email">
+            <div id="verify-container">
+                <div id="robot-check">
+                    <input type="checkbox" id="not-robot" />
+                    <p id="p1">I am not a robot</p>
+                </div>
+                <div id="status"></div>
+            </div>
+            <button id="verify-btn" disabled>Request email</button>
+        </div>
+        
+    </div>
+    <div id="enddiv">
+        <div id="cncdiv">
+            <h3 id="paragraph1" data-eng="Contact" data-lv="Kontakti">Contact</h3>
+            <span id="item" data-eng="Address: Ūdeļu iela 22, Rīga, Latvija, LV - 1064" data-lv="Adrese: Ūdeļu iela 22, Rīga, Latvija, LV - 1064">Address: <span id="span4">Ūdeļu iela 22, Rīga, Latvija, LV - 1064</span></span>
+            <br><br>
+            <span id="item" data-eng="Reception Hotline: 27706214, 20140052" data-lv="Reģistratūras karstā līnija: 27706214, 20140052">Reception Hotline: <span id="span4">27706214, 20140052</span></span>
+            <br><br>
+            <span id="item" data-eng="E-mail: rsmt@rsmt.lv, uznemsana@rsmt.lv" data-lv="E-pasts: rsmt@rsmt.lv, uznemsana@rsmt.lv">E-mail: <span id="span4">rsmt@rsmt.lv, uznemsana@rsmt.lv</span></span>
+        </div>
+        <div id="updtdiv"> 
+            <h3 id="paragraph1" data-eng="Updates" data-lv="Jaunumi">Updates</h3>
+            <span id="item" data-eng="18.01.2025: V1.3" data-lv="18.01.2025: V1.3">19.01.2025: <span id="span4">V1.4</span></span>
+            <br><br>
+            <span id="item" data-eng="17.01.2025: V1.2" data-lv="17.01.2025: V1.2">18.01.2025: <span id="span4">V1.3</span></span>
+            <br><br>
+            <span id="item" data-eng="10.01.2025: V1.1" data-lv="10.01.2025: V1.1">17.01.2025: <span id="span4">V1.2</span></span>
+        </div>
+        <div id="phtdiv"> 
+            <h3 id="paragraph1" data-eng="Photogallery" data-lv="Foto galerija">Photogallery</h3>
+            <br><br><br><br><br>
+        </div>
+    </div>
+
+
+    <script>
+        let verify = document.getElementById("verify")
+        let logindiv = document.getElementById("logindiv")
+        let verifydiv = document.getElementById("verifydiv")
+        const checkbox = document.getElementById('not-robot');
+        const button = document.getElementById('verify-btn');
+        const status = document.getElementById('status');
+        let container = document.getElementById("verify-container")
+        let btn = document.getElementById("")
+
+        verify.onclick = function(){
+            verifydiv.style.display="flex";
+            logindiv.style.display="none";
+        }
+
+        checkbox.addEventListener('change', () => {
+            button.disabled = !checkbox.checked; 
+        });
+
+        button.addEventListener('click', () => {
+            status.textContent = 'Verification successful!';
+        });
+    </script>
+</body>
+
+
+
+</html>
