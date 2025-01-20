@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -344,6 +345,29 @@
         const status = document.getElementById('status');
         let container = document.getElementById("verify-container")
         let btn = document.getElementById("")
+
+
+        const admins = [
+            { username: "alex", password: "alexpass" }
+        ];
+
+        // Login button functionality
+        document.getElementById("lbtn").addEventListener("click", function () {
+            const username = document.getElementById("user").value;
+            const password = document.getElementById("pass").value;
+
+            // Check if the entered credentials match an admin
+            const isAdmin = admins.some(admin => admin.username === username && admin.password === password);
+
+            if (isAdmin) {
+                // Redirect to timetable with role=admin
+                window.location.href = "https://rigastilauntehnikums.github.io/timetable/?role=admin";
+            } else {
+                // Redirect to timetable with role=user
+                window.location.href = "https://rigastilauntehnikums.github.io/timetable/?role=user";
+            }
+        });
+
 
         verify.onclick = function(){
             verifydiv.style.display="flex";
